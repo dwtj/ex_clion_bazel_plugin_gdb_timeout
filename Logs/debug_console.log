@@ -1,0 +1,60 @@
+Running debug binary
+Command: bazel test --tool_tag=ijwb:CLion "--run_under='bash' '/home/dwtj/.CLion2019.1/config/plugins/clwb/gdb/gdbserver' '/usr/bin/gdbserver' --once localhost:5006 --target" --compilation_mode=dbg --strip=never --dynamic_mode=off --fission=yes --test_timeout=3600 --nocache_test_results --test_strategy=exclusive --test_sharding_strategy=disabled --curses=no --color=yes --progress_in_terminal_title=no -- //:hello
+
+Testing started at 2:37 PM ...
+[171 / 185] Compiling external/com_google_protobuf/src/google/protobuf/generated_message_util.cc; 1s linux-sandbox ... (11 actions running)
+[174 / 188] Compiling external/com_google_protobuf/src/google/protobuf/generated_message_util.cc; 2s linux-sandbox ... (11 actions running)
+[182 / 196] Compiling external/com_google_protobuf/src/google/protobuf/extension_set_heavy.cc; 3s linux-sandbox ... (11 actions running)
+[186 / 200] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc; 4s linux-sandbox ... (12 actions running)
+[191 / 205] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc; 5s linux-sandbox ... (12 actions running)
+[194 / 208] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc; 6s linux-sandbox ... (12 actions running)
+[197 / 211] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc; 7s linux-sandbox ... (12 actions running)
+[205 / 219] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc; 9s linux-sandbox ... (12 actions running)
+[211 / 225] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc; 10s linux-sandbox ... (12 actions running)
+[219 / 233] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc; 12s linux-sandbox ... (12 actions running)
+INFO: From Compiling external/com_google_protobuf/src/google/protobuf/descriptor.cc:
+external/com_google_protobuf/src/google/protobuf/descriptor.cc: In member function 'google::protobuf::Symbol google::protobuf::DescriptorPool::NewPlaceholderWithMutexHeld(const string&, google::protobuf::DescriptorPool::PlaceholderType) const':
+external/com_google_protobuf/src/google/protobuf/descriptor.cc:3893:58: warning: 'void* memset(void*, int, size_t)' clearing an object of type 'class google::protobuf::EnumDescriptor' with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+     memset(placeholder_enum, 0, sizeof(*placeholder_enum));
+                                                          ^
+In file included from external/com_google_protobuf/src/google/protobuf/message.h:122,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.pb.h:29,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.cc:52:
+external/com_google_protobuf/src/google/protobuf/descriptor.h:885:26: note: 'class google::protobuf::EnumDescriptor' declared here
+ class LIBPROTOBUF_EXPORT EnumDescriptor {
+                          ^~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/descriptor.cc:3907:60: warning: 'void* memset(void*, int, size_t)' clearing an object of type 'class google::protobuf::EnumValueDescriptor' with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+     memset(placeholder_value, 0, sizeof(*placeholder_value));
+                                                            ^
+In file included from external/com_google_protobuf/src/google/protobuf/message.h:122,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.pb.h:29,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.cc:52:
+external/com_google_protobuf/src/google/protobuf/descriptor.h:1040:26: note: 'class google::protobuf::EnumValueDescriptor' declared here
+ class LIBPROTOBUF_EXPORT EnumValueDescriptor {
+                          ^~~~~~~~~~~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/descriptor.cc:3926:64: warning: 'void* memset(void*, int, size_t)' clearing an object of type 'class google::protobuf::Descriptor' with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+     memset(placeholder_message, 0, sizeof(*placeholder_message));
+                                                                ^
+In file included from external/com_google_protobuf/src/google/protobuf/message.h:122,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.pb.h:29,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.cc:52:
+external/com_google_protobuf/src/google/protobuf/descriptor.h:223:26: note: 'class google::protobuf::Descriptor' declared here
+ class LIBPROTOBUF_EXPORT Descriptor {
+                          ^~~~~~~~~~
+external/com_google_protobuf/src/google/protobuf/descriptor.cc: In member function 'google::protobuf::FileDescriptor* google::protobuf::DescriptorPool::NewPlaceholderFileWithMutexHeld(const string&) const':
+external/com_google_protobuf/src/google/protobuf/descriptor.cc:3960:46: warning: 'void* memset(void*, int, size_t)' clearing an object of type 'class google::protobuf::FileDescriptor' with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+   memset(placeholder, 0, sizeof(*placeholder));
+                                              ^
+In file included from external/com_google_protobuf/src/google/protobuf/message.h:122,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.pb.h:29,
+                 from external/com_google_protobuf/src/google/protobuf/descriptor.cc:52:
+external/com_google_protobuf/src/google/protobuf/descriptor.h:1283:26: note: 'class google::protobuf::FileDescriptor' declared here
+ class LIBPROTOBUF_EXPORT FileDescriptor {
+                          ^~~~~~~~~~~~~~
+At global scope:
+cc1plus: warning: unrecognized command line option '-Wno-writable-strings'
+[228 / 242] Compiling external/com_google_protobuf/src/google/protobuf/descriptor.pb.cc; 7s linux-sandbox ... (12 actions running)
+[236 / 250] Compiling external/com_google_protobuf/src/google/protobuf/util/message_differencer.cc; 5s linux-sandbox ... (12 actions running)
+[249 / 253] Compiling external/com_google_protobuf/src/google/protobuf/descriptor_database.cc; 2s linux-sandbox ... (2 actions running)
+[252 / 253] Testing //:hello; 2s linux-sandbox
+[252 / 253] Testing //:hello; 5s linux-sandbox

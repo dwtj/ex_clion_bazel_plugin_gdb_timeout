@@ -1,0 +1,15 @@
+cc_test(
+    name = "hello",
+    srcs = ["hello.cc"],
+    deps = [":greeting_cc_proto"],
+)
+
+proto_library(
+    name = "greeting_proto",
+    srcs = ["greeting.proto"],
+)
+
+cc_proto_library(
+    name = "greeting_cc_proto",
+    deps = [":greeting_proto"],
+)
